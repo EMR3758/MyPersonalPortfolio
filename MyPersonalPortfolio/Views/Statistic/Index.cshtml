@@ -1,0 +1,364 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h3 class="mb-1">
+                            👋 Hoş Geldin Emirhan
+                        </h3>
+
+                        <p class="text-muted mb-0">
+                            Yönetim paneline hoş geldin. İşte güncel istatistiklerin.
+                        </p>
+                    </div>
+
+                    <div class="text-right">
+
+                        <h4 id="currentDate" class="mb-1"></h4>
+
+                        <h2 id="currentTime" class="font-weight-bold text-primary"></h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- ÜST İSTATİSTİK KARTLARI -->
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-users"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Yetenek Sayısı</p>
+                                    <h4 class="card-title">@ViewBag.v1</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Toplam Mesaj</p>
+                                    <h4 class="card-title">@ViewBag.v2</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-stats card-danger">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-envelope-o"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Okunmamış Mesaj</p>
+                                    <h4 class="card-title">@ViewBag.v3</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-stats card-primary">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Okunan Mesaj</p>
+                                    <h4 class="card-title">@ViewBag.v4</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALT İSTATİSTİK KARTLARI -->
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="card card-stats card-info">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-briefcase"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Toplam Deneyim</p>
+                                    <h4 class="card-title">@ViewBag.v5</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-stats card-success">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-folder-open"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Toplam Portföy</p>
+                                    <h4 class="card-title">@ViewBag.v6</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-stats card-warning">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-comments"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Referans Sayısı</p>
+                                    <h4 class="card-title">@ViewBag.v7</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-stats card-secondary">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon-big text-center">
+                                    <i class="la la-share-alt"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 d-flex align-items-center">
+                                <div class="numbers">
+                                    <p class="card-category">Sosyal Medya</p>
+                                    <h4 class="card-title">@ViewBag.v8</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Genel İstatistik Grafiği</div>
+                    </div>
+
+                    <div class="card-body">
+                        <canvas id="statisticsChart" height="110"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="card-title">Son Gelen Mesajlar</div>
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>Gönderen</th>
+                                <th>Konu</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in ViewBag.LastMessages)
+                            {
+                                <tr>
+
+                                    <td>@item.NameSurname</td>
+
+                                    <td>@item.Subject</td>
+
+                                    <td>
+                                        @if (item.IsRead)
+                                        {
+                                            <span class="badge badge-success">Okundu</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-danger">Yeni</span>
+                                        }
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="card-footer text-right">
+                    <a href="/Message/Inbox/" class="btn btn-primary btn-sm">
+                        Tüm Mesajları Gör
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const ctx = document.getElementById('statisticsChart');
+
+    new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+    labels: ['Yetenek', 'Deneyim', 'Portföy', 'Referans', 'Mesaj'],
+
+    datasets: [{
+    label: 'Toplam Kayıt',
+    data: [
+    @ViewBag.v1,
+    @ViewBag.v5,
+    @ViewBag.v6,
+    @ViewBag.v7,
+    @ViewBag.v2
+    ],
+    backgroundColor: [
+    '#1572E8',
+    '#31CE36',
+    '#FFAD46',
+    '#F25961',
+    '#6861CE'
+    ],
+    borderRadius: 8
+    }]
+    },
+
+    options: {
+    responsive: true,
+    maintainAspectRatio: false,
+
+    plugins: {
+    legend: {
+    display: false
+    }
+    },
+
+    scales: {
+    y: {
+    beginAtZero: true,
+    ticks: {
+    stepSize: 1
+    }
+    }
+    }
+    }
+    });
+
+    });
+</script>
+
+<script>
+
+    function updateClock() {
+
+    const now = new Date();
+
+    const dateOptions = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+    };
+
+    document.getElementById("currentDate").innerHTML =
+    now.toLocaleDateString('tr-TR', dateOptions);
+
+    document.getElementById("currentTime").innerHTML =
+    now.toLocaleTimeString('tr-TR');
+    }
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+
+</script>

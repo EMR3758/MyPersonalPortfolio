@@ -1,0 +1,65 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.SocialMedia
+
+@{
+    ViewData["Title"] = "Sosyal Medya Güncelle";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Sosyal Medya İşlemleri</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Sosyal Medya Güncelle</div>
+            </div>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="SocialMediaId" />
+
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Platform Adı</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Profil Linki</label>
+                        <input type="text" asp-for="Url" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>İkon Sınıfı</label>
+                        <input type="text" asp-for="Icon" class="form-control" />
+                        <small class="text-muted">
+                            Örnek: <strong>lab la-github</strong>,
+                            <strong>lab la-linkedin</strong>,
+                            <strong>lab la-instagram</strong>,
+                            <strong>lab la-twitter</strong>
+                        </small>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <button class="btn btn-success">
+                        <i class="la la-save"></i> Güncelle
+                    </button>
+
+                    <a href="/SocialMedia/Index" class="btn btn-secondary">
+                        <i class="la la-arrow-left"></i> Geri Dön
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

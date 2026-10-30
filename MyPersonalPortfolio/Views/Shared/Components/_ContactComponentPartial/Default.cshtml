@@ -1,0 +1,113 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.Contact
+<section id="contact" class="s-contact target-section">
+
+    <div class="overlay"></div>
+
+    <div class="row narrow section-intro">
+        <div class="col-full">
+            <h3>@Model.Title</h3>
+            <h1>@Model.Description</h1>
+
+            <p class="lead">
+                Herhangi bir proje, iş birliği veya sorularınız için benimle iletişime geçebilirsiniz.
+                En kısa sürede dönüş sağlamaktan memnuniyet duyarım.
+            </p>
+        </div>
+    </div>
+
+    <div class="row contact__main">
+
+        <div class="col-eight tab-full contact__form">
+
+            <form method="post" asp-controller="Default" asp-action="SendMessage" >
+
+                <fieldset>
+
+                    <div class="form-field">
+                        <input name="NameSurname"
+                               type="text"
+                               id="NameSurname"
+                               placeholder="Ad Soyad"
+                               minlength="2"
+                               required
+                               class="full-width">
+                    </div>
+
+                    <div class="form-field">
+                        <input name="Mail"
+                               type="email"
+                               id="Mail"
+                               placeholder="E-posta Adresiniz"
+                               required
+                               class="full-width">
+                    </div>
+
+                    <div class="form-field">
+                        <input name="Subject"
+                               type="text"
+                               id="Subject"
+                               placeholder="Konu"
+                               class="full-width">
+                    </div>
+
+                    <div class="form-field">
+                        <textarea name="MessageContent"
+                                  id="MessageContent"
+                                  placeholder="Mesajınızı yazınız..."
+                                  rows="10"
+                                  required
+                                  class="full-width"></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <button type="submit" class="full-width btn--primary">
+                            Mesaj Gönder
+                        </button>
+
+                        <div class="submit-loader">
+                            <div class="text-loader">Gönderiliyor...</div>
+
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+            <div class="message-warning">
+                Bir hata oluştu. Lütfen tekrar deneyiniz.
+            </div>
+
+            <div class="message-success">
+                Mesajınız başarıyla gönderildi. Teşekkür ederim!
+            </div>
+
+        </div>
+
+        <div class="col-four tab-full contact__infos">
+
+            <h4 class="h06">Telefon</h4>
+            <p>
+                @Model.Phone2
+            </p>
+
+            <h4 class="h06">E-posta</h4>
+            <p>
+                @Model.Email1
+            </p>
+
+            <h4 class="h06">Konum</h4>
+            <p>
+                @Model.Address
+            </p>
+
+        </div>
+
+    </div>
+
+</section>

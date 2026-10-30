@@ -1,0 +1,60 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.About
+
+@{
+    ViewData["Title"] = "Yeni Hakkımda";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Yeni Hakkımda Bilgisi</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Bilgi Ekle</div>
+            </div>
+
+            <form method="post">
+
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alt Başlık</label>
+                        <input type="text" asp-for="SubDescription" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Detay</label>
+                        <textarea asp-for="Details"
+                                  rows="8"
+                                  class="form-control"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <button class="btn btn-primary">
+                        Kaydet
+                    </button>
+
+                    <a href="/About/Index"
+                       class="btn btn-danger">
+                        Vazgeç
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

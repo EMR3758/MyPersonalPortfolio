@@ -1,0 +1,114 @@
+﻿@model List<MyPersonalPortfolio.DAL.Entities.Feature>
+
+@{
+    ViewData["Title"] = "Öne Çıkan Alan";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h3 class="mb-2">
+                            🚀 Öne Çıkan Alan Yönetimi
+                        </h3>
+
+                        <p class="text-muted mb-2">
+                            Ziyaretçilerin ana sayfada ilk karşılaştığı başlık ve açıklamaları bu bölümden düzenleyebilirsiniz.
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <i class="la la-star text-warning" style="font-size:70px;"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <h4 class="page-title">Öne Çıkan Alan İşlemleri</h4>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="card-title">Öne Çıkan Alan Listesi</div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-sub mb-3">
+                            Ana sayfada görüntülenecek öne çıkan alanı buradan yönetebilirsiniz.
+                        </div>
+
+                        <div class="table-responsive">
+
+                            <table class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>Açıklama</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+
+                                            <td>@item.FeatureId</td>
+
+                                            <td>@item.Title</td>
+
+                                            <td>
+                                                @(item.Description.Length > 80
+                                                    ? item.Description.Substring(0, 80) + "..."
+                                                    : item.Description)
+                                            </td>
+
+                                            <td>
+                                                <a href="/Feature/DeleteFeature/@item.FeatureId"
+                                                   class="btn btn-danger btn-sm"
+                                                   onclick="return confirm('Bu özellik silinsin mi?')">
+                                                    Sil
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="/Feature/UpdateFeature/@item.FeatureId"
+                                                   class="btn btn-success btn-sm">
+                                                    Güncelle
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.Contact
+
+@{
+    ViewData["Title"] = "İletişim";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">İletişim Bilgileri</h4>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="card-title">İletişim Bilgileri</div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <table class="table table-bordered">
+
+                            <tr>
+                                <th>Başlık</th>
+                                <td>@Model.Title</td>
+                            </tr>
+
+                            <tr>
+                                <th>Açıklama</th>
+                                <td>@Model.Description</td>
+                            </tr>
+
+                            <tr>
+                                <th>Telefon 1</th>
+                                <td>@Model.Phone1</td>
+                            </tr>
+
+                            <tr>
+                                <th>Telefon 2</th>
+                                <td>@Model.Phone2</td>
+                            </tr>
+
+                            <tr>
+                                <th>E-posta 1</th>
+                                <td>@Model.Email1</td>
+                            </tr>
+
+                            <tr>
+                                <th>E-posta 2</th>
+                                <td>@Model.Email2</td>
+                            </tr>
+
+                            <tr>
+                                <th>Adres</th>
+                                <td>@Model.Address</td>
+                            </tr>
+
+                        </table>
+
+                        <a href="/Contact/UpdateContact"
+                           class="btn btn-success">
+                            Güncelle
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

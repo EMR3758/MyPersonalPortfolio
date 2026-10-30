@@ -1,0 +1,64 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.Testimonial
+
+@{
+    ViewData["Title"] = "Yorum Güncelle";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Yorum İşlemleri</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Yorum Güncelle</div>
+            </div>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="TestimonialId" />
+
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" asp-for="NameSurname" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ünvan</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fotoğraf URL</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Yorum</label>
+                        <textarea asp-for="Comment" rows="6" class="form-control"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <button class="btn btn-success">
+                        <i class="la la-save"></i> Güncelle
+                    </button>
+
+                    <a href="/Testimonial/Index" class="btn btn-secondary">
+                        <i class="la la-arrow-left"></i> Geri Dön
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

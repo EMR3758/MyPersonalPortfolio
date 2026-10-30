@@ -1,0 +1,100 @@
+﻿@model List<MyPersonalPortfolio.DAL.Entities.Portfolio>
+
+@{
+    ViewData["Title"] = "Projeler";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Proje İşlemleri</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Proje Listesi</div>
+            </div>
+
+            <div class="card-body">
+
+                <a href="/Portfolio/CreatePortfolio" class="btn btn-primary mb-3">
+                    <i class="la la-plus"></i> Yeni Proje
+                </a>
+
+                <table class="table table-hover table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Görsel</th>
+                            <th>Başlık</th>
+                            <th>Alt Başlık</th>
+                            <th>Proje Linki</th>
+                            <th>Açıklama</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.PortfolioId</td>
+
+                                <td>
+                                    <img src="@item.ImageUrl"
+                                         width="90"
+                                         height="60"
+                                         style="object-fit:cover;border-radius:8px;" />
+                                </td>
+
+                                <td>@item.Title</td>
+
+                                <td>@item.SubTitle</td>
+
+                                <td>
+                                    <a href="@item.Url"
+                                       target="_blank"
+                                       class="btn btn-info btn-sm">
+                                        <i class="la la-external-link"></i> Git
+                                    </a>
+                                </td>
+
+                                <td>
+                                    @(item.Description.Length > 50
+                                        ? item.Description.Substring(0, 50) + "..."
+                                        : item.Description)
+                                </td>
+
+                                <td>
+                                    <a href="/Portfolio/DeletePortfolio/@item.PortfolioId"
+                                       class="btn btn-danger btn-sm"
+                                       onclick="return confirm('Bu projeyi silmek istediğinize emin misiniz?')">
+                                        <i class="la la-trash"></i> Sil
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <a href="/Portfolio/UpdatePortfolio/@item.PortfolioId"
+                                       class="btn btn-success btn-sm">
+                                        <i class="la la-edit"></i> Güncelle
+                                    </a>
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

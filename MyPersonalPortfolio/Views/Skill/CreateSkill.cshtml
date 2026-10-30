@@ -1,0 +1,57 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.Skill
+
+@{
+    ViewData["Title"] = "Yeni Yetenek";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Yeni Yetenek</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Yetenek Ekle</div>
+            </div>
+
+            <form method="post">
+
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Yetenek Adı</label>
+                        <input asp-for="Title" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Seviye (%)</label>
+                        <input asp-for="Value"
+                               type="number"
+                               min="0"
+                               max="100"
+                               class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <button class="btn btn-primary">
+                        Kaydet
+                    </button>
+
+                    <a href="/Skill/Index"
+                       class="btn btn-danger">
+                        Vazgeç
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

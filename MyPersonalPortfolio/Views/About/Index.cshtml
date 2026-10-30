@@ -1,0 +1,119 @@
+﻿@model List<MyPersonalPortfolio.DAL.Entities.About>
+
+@{
+    ViewData["Title"] = "Hakkımda";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div>
+                        <h3 class="mb-1">
+                            👤 Hakkımda Yönetimi
+                        </h3>
+
+                        <p class="text-muted mb-0">
+                            Bu sayfadan ziyaretçilerin ana sayfada göreceği hakkımda bilgilerini, başlıkları ve açıklamaları kolayca yönetebilirsiniz.
+                        </p>
+                    </div>
+
+                    <div class="text-right">
+                        <i class="la la-user text-primary" style="font-size:60px;"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <h4 class="page-title">Hakkımda İşlemleri</h4>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="card-title">Hakkımda Listesi</div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-sub mb-3">
+                            Hakkımda alanı ile ilgili ekleme, silme ve güncelleme işlemlerini buradan yapabilirsiniz.
+                        </div>
+
+                        <a href="/About/CreateAbout" class="btn btn-primary mb-3">
+                            <i class="la la-plus"></i> Yeni Hakkımda Bilgisi
+                        </a>
+
+                        <div class="table-responsive">
+
+                            <table class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>Alt Başlık</th>
+                                        <th>Detay</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+
+                                            <td>@item.AboutId</td>
+
+                                            <td>@item.Title</td>
+
+                                            <td>@item.SubDescription</td>
+
+                                            <td>
+                                                @(item.Details.Length > 50
+                                                    ? item.Details.Substring(0, 50) + "..."
+                                                    : item.Details)
+                                            </td>
+
+                                            <td>
+                                                <a href="/About/DeleteAbout/@item.AboutId"
+                                                   class="btn btn-danger btn-sm"
+                                                   onclick="return confirm('Bu kayıt silinsin mi?')">
+                                                    Sil
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="/About/UpdateAbout/@item.AboutId"
+                                                   class="btn btn-success btn-sm">
+                                                    Güncelle
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

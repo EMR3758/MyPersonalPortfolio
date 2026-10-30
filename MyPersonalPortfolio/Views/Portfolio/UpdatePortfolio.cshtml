@@ -1,0 +1,67 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.Portfolio
+
+@{
+    ViewData["Title"] = "Proje Güncelle";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Proje İşlemleri</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Proje Güncelle</div>
+            </div>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="PortfolioId" />
+
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Proje Başlığı</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alt Başlık</label>
+                        <input type="text" asp-for="SubTitle" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Görsel URL</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Proje Linki</label>
+                        <input type="text" asp-for="Url" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Proje Açıklaması</label>
+                        <textarea asp-for="Description" rows="5" class="form-control"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-success">
+                        <i class="la la-save"></i> Güncelle
+                    </button>
+
+                    <a href="/Portfolio/Index" class="btn btn-secondary">
+                        <i class="la la-arrow-left"></i> Geri Dön
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model MyPersonalPortfolio.DAL.Entities.Contact
+
+@{
+    ViewData["Title"] = "İletişim Güncelle";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">İletişim Bilgilerini Güncelle</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">İletişim Güncelleme</div>
+            </div>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="ContactId" />
+
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <textarea asp-for="Description" rows="3" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefon 1</label>
+                        <input type="text" asp-for="Phone1" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefon 2</label>
+                        <input type="text" asp-for="Phone2" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>E-posta 1</label>
+                        <input type="email" asp-for="Email1" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>E-posta 2</label>
+                        <input type="email" asp-for="Email2" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Adres</label>
+                        <textarea asp-for="Address" rows="3" class="form-control"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-primary">
+                        Güncelle
+                    </button>
+
+                    <a href="/Contact/Index"
+                       class="btn btn-danger">
+                        İptal
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

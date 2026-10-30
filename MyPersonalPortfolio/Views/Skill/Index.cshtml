@@ -1,0 +1,105 @@
+﻿@model List<MyPersonalPortfolio.DAL.Entities.Skill>
+
+@{
+    ViewData["Title"] = "Yetenekler";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Yetenek İşlemleri</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">Yetenek Listesi</div>
+            </div>
+
+            <div class="card-body">
+
+                <a href="/Skill/CreateSkill" class="btn btn-primary mb-3">
+                    <i class="la la-plus"></i> Yeni Yetenek
+                </a>
+
+                <table class="table table-hover">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Yetenek</th>
+                            <th>Seviye (%)</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.SkillId</td>
+
+                                <td>@item.Title</td>
+
+                                <td style="width:300px">
+
+                                    @{
+                                        string color = "bg-danger";
+
+                                        if (item.Value >= 80)
+                                        {
+                                            color = "bg-success";
+                                        }
+                                        else if (item.Value >= 60)
+                                        {
+                                            color = "bg-info";
+                                        }
+                                        else if (item.Value >= 40)
+                                        {
+                                            color = "bg-warning";
+                                        }
+                                    }
+
+                                    <div class="progress" style="height:22px;">
+                                        <div class="progress-bar @color"
+                                             role="progressbar"
+                                             style="width:@item.Value%"
+                                             aria-valuenow="@item.Value"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100">
+                                            @item.Value%
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <a href="/Skill/DeleteSkill/@item.SkillId"
+                                       class="btn btn-danger btn-sm"
+                                       onclick="return confirm('Silinsin mi?')">
+                                        Sil
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <a href="/Skill/UpdateSkill/@item.SkillId"
+                                       class="btn btn-success btn-sm">
+                                        Güncelle
+                                    </a>
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model Message
+
+
+@{
+    ViewData["Title"] = "Mesaj Detayı";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+
+        <h4 class="page-title">Mesaj Detayı</h4>
+
+        <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">@Model.Subject</div>
+            </div>
+
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label><strong>Gönderen</strong></label>
+                    <input type="text" class="form-control"
+                           value="@Model.NameSurname" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label><strong>E-Mail</strong></label>
+                    <input type="text" class="form-control"
+                           value="@Model.Mail" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Tarih</strong></label>
+                    <input type="text" class="form-control"
+                           value="@Model.SendDate.ToString("dd.MM.yyyy HH:mm")" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Mesaj</strong></label>
+
+                    <textarea class="form-control"
+                              rows="8"
+                              readonly>@Model.MessageContent</textarea>
+                </div>
+
+                <a href="/Message/Inbox" class="btn btn-primary">
+                    Gelen Kutusuna Dön
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
